@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ElseRoom | A more productive real estate brokerage</title>
-  <meta name="description" content="Join the waitlist for ElseRoom, the operating system that understands your real estate business and gets the work done.">
+  <meta name="description"
+    content="Join the waitlist for ElseRoom, the operating system that understands your real estate business and gets the work done.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
-  
+
   <nav class="navbar">
-    <div class="logo-container">
+    <div class="logo-container" style="display: flex; align-items: center;">
       <img src="./asset/logo.svg" alt="ElseRoom Logo" class="logo">
+      <p><b style="font-size: 20px;">Elseroom</b></p>
     </div>
   </nav>
 
@@ -22,16 +26,15 @@
     <div class="hero-content">
       <h1 class="hero-title">A more<br><span class="highlight">productive</span><br>real estate brokerage.</h1>
       <p class="hero-subtitle">The operating system that understands your business and gets the work done.</p>
-      
+
       <div class="cta-container">
         <input type="email" id="hero-email" placeholder="Your email" aria-label="Your email address">
         <button id="open-waitlist-btn" class="primary-btn">Join the waitlist &rarr;</button>
       </div>
     </div>
-    
+
     <div class="hero-graphics">
-      <div class="gradient-sphere"></div>
-      <!-- We don't have the cube asset, so we simulate a beautiful gradient background matching the aesthetic -->
+      <img src="./asset/logo.png" alt="ElseRoom 3D Logo" class="hero-3d-logo">
     </div>
   </main>
 
@@ -39,7 +42,7 @@
   <div id="waitlist-modal" class="modal-overlay hidden">
     <div class="modal-container">
       <button class="close-modal-btn" aria-label="Close modal">&times;</button>
-      
+
       <div class="modal-header">
         <h2>Join the ElseRoom waitlist</h2>
         <p>Be among the first real estate teams to get access.</p>
@@ -50,11 +53,13 @@
           <div class="form-row">
             <div class="form-group">
               <label for="first_name">First name *</label>
-              <input type="text" id="first_name" name="first_name" required minlength="1" maxlength="100" placeholder="First name">
+              <input type="text" id="first_name" name="first_name" required minlength="1" maxlength="100"
+                placeholder="First name">
             </div>
             <div class="form-group">
               <label for="last_name">Last name *</label>
-              <input type="text" id="last_name" name="last_name" required minlength="1" maxlength="100" placeholder="Last name">
+              <input type="text" id="last_name" name="last_name" required minlength="1" maxlength="100"
+                placeholder="Last name">
             </div>
           </div>
 
@@ -65,7 +70,8 @@
 
           <div class="form-group">
             <label for="brokerage_name">Brokerage / Company name *</label>
-            <input type="text" id="brokerage_name" name="brokerage_name" required minlength="1" maxlength="150" placeholder="Brokerage name">
+            <input type="text" id="brokerage_name" name="brokerage_name" required minlength="1" maxlength="150"
+              placeholder="Brokerage name">
           </div>
 
           <div class="form-row">
@@ -158,14 +164,22 @@
           <div class="form-group checkbox-group-container">
             <label>What would you most like ElseRoom to handle? * (Select up to 3)</label>
             <div class="checkbox-options" id="work_to_handle_options">
-              <label class="checkbox-label"><input type="checkbox" name="work_to_handle" value="lead_qualification_followup"> Lead qualification & follow-up</label>
-              <label class="checkbox-label"><input type="checkbox" name="work_to_handle" value="seller_buyer_workflows"> Seller / buyer workflows</label>
-              <label class="checkbox-label"><input type="checkbox" name="work_to_handle" value="listings_marketing"> Listings & marketing</label>
-              <label class="checkbox-label"><input type="checkbox" name="work_to_handle" value="documents_transactions"> Documents & transactions</label>
-              <label class="checkbox-label"><input type="checkbox" name="work_to_handle" value="market_analysis_valuations"> Market analysis & valuations</label>
-              <label class="checkbox-label"><input type="checkbox" name="work_to_handle" value="client_communication"> Client communication</label>
-              <label class="checkbox-label"><input type="checkbox" name="work_to_handle" value="brokerage_operations"> Brokerage operations</label>
-              <label class="checkbox-label"><input type="checkbox" name="work_to_handle" value="other"> Something else</label>
+              <label class="checkbox-label"><input type="checkbox" name="work_to_handle"
+                  value="lead_qualification_followup"> Lead qualification & follow-up</label>
+              <label class="checkbox-label"><input type="checkbox" name="work_to_handle" value="seller_buyer_workflows">
+                Seller / buyer workflows</label>
+              <label class="checkbox-label"><input type="checkbox" name="work_to_handle" value="listings_marketing">
+                Listings & marketing</label>
+              <label class="checkbox-label"><input type="checkbox" name="work_to_handle" value="documents_transactions">
+                Documents & transactions</label>
+              <label class="checkbox-label"><input type="checkbox" name="work_to_handle"
+                  value="market_analysis_valuations"> Market analysis & valuations</label>
+              <label class="checkbox-label"><input type="checkbox" name="work_to_handle" value="client_communication">
+                Client communication</label>
+              <label class="checkbox-label"><input type="checkbox" name="work_to_handle" value="brokerage_operations">
+                Brokerage operations</label>
+              <label class="checkbox-label"><input type="checkbox" name="work_to_handle" value="other"> Something
+                else</label>
             </div>
             <p id="checkbox-error" class="error-msg">Please select between 1 and 3 options.</p>
           </div>
@@ -173,9 +187,12 @@
           <div class="form-group radio-group-container">
             <label>Interested in getting early access and helping shape ElseRoom? *</label>
             <div class="radio-options">
-              <label class="radio-label"><input type="radio" name="early_access_interest" value="yes" required> Yes, I'd love to</label>
-              <label class="radio-label"><input type="radio" name="early_access_interest" value="maybe"> Maybe — tell me more</label>
-              <label class="radio-label"><input type="radio" name="early_access_interest" value="updates_only"> Just keep me updated</label>
+              <label class="radio-label"><input type="radio" name="early_access_interest" value="yes" required> Yes, I'd
+                love to</label>
+              <label class="radio-label"><input type="radio" name="early_access_interest" value="maybe"> Maybe — tell me
+                more</label>
+              <label class="radio-label"><input type="radio" name="early_access_interest" value="updates_only"> Just
+                keep me updated</label>
             </div>
           </div>
 
@@ -194,4 +211,5 @@
 
   <script src="./script.js"></script>
 </body>
+
 </html>

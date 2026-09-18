@@ -2,7 +2,8 @@
   --bg-color: #FAFAFC;
   --text-main: #111118;
   --text-muted: #6B7280;
-  --primary: #6343F2; /* approximate from the mockup */
+  --primary: #6343F2;
+  /* approximate from the mockup */
   --primary-hover: #5031D1;
   --white: #FFFFFF;
   --border-color: #E5E7EB;
@@ -51,7 +52,7 @@ body {
   display: flex;
   flex-direction: row;
   min-height: 100vh;
-  padding: 6rem 4rem 4rem;
+  padding: 6rem 8rem 4rem;
   position: relative;
   overflow: hidden;
 }
@@ -139,36 +140,31 @@ body {
 /* Graphics Side - Pure CSS aesthetic */
 .hero-graphics {
   flex: 1;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 55%;
-  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   z-index: 1;
-  background: radial-gradient(circle at 60% 50%, rgba(139, 92, 246, 0.25) 0%, rgba(99, 102, 241, 0.15) 30%, rgba(250, 250, 252, 0) 70%);
-  pointer-events: none;
 }
 
-.gradient-sphere {
-  position: absolute;
-  top: 20%;
-  right: 10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(99, 67, 242, 0.4) 0%, rgba(99, 67, 242, 0) 70%);
-  border-radius: 50%;
-  filter: blur(60px);
-  animation: pulse 8s ease-in-out infinite alternate;
+.hero-3d-logo {
+  max-width: 80%;
+  height: auto;
+  transform: translate(10%, -5%);
+  animation: float 6s ease-in-out infinite;
 }
 
-@keyframes pulse {
+@keyframes float {
   0% {
-    transform: scale(1) translate(0, 0);
-    opacity: 0.8;
+    transform: translate(10%, -5%) translateY(0);
   }
+
+  50% {
+    transform: translate(10%, -5%) translateY(-20px);
+  }
+
   100% {
-    transform: scale(1.1) translate(-20px, 20px);
-    opacity: 1;
+    transform: translate(10%, -5%) translateY(0);
   }
 }
 
@@ -237,7 +233,7 @@ body {
 
 .close-modal-btn:hover {
   color: var(--text-main);
-  background: rgba(0,0,0,0.05);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .modal-header {
@@ -294,7 +290,8 @@ select {
   transition: all 0.2s ease;
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
   outline: none;
   border-color: var(--primary);
   background: #fff;
@@ -392,14 +389,24 @@ input[type="radio"] {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    padding: 6rem 2rem 3rem;
+  .navbar {
+    padding: 1.5rem 2rem;
   }
-  
+
+  .hero {
+    flex-direction: column-reverse;
+    padding: 7rem 2rem 3rem;
+  }
+
   .hero-content {
     align-items: center;
     text-align: center;
+  }
+
+  .hero-3d-logo {
+    transform: translate(0, 0);
+    animation: float-mobile 6s ease-in-out infinite;
+    margin-bottom: 1rem;
   }
 
   .hero-title {
@@ -411,7 +418,8 @@ input[type="radio"] {
     width: 100%;
   }
 
-  .cta-container input, .primary-btn {
+  .cta-container input,
+  .primary-btn {
     width: 100%;
   }
 
@@ -419,9 +427,21 @@ input[type="radio"] {
     flex-direction: column;
     gap: 0;
   }
-  
+
   .checkbox-options,
   .radio-options {
     grid-template-columns: 1fr;
+  }
+}
+
+@keyframes float-mobile {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
