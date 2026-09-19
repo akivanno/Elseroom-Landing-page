@@ -350,6 +350,11 @@ input[type="radio"] {
   display: none;
 }
 
+.modal-header.hidden,
+.modal-body.hidden {
+  display: none;
+}
+
 /* Success State */
 .modal-success {
   padding: 4rem 2.5rem;

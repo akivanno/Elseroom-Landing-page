@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('waitlist-form');
   const checkboxOptions = document.querySelectorAll('input[name="work_to_handle"]');
   const checkboxError = document.getElementById('checkbox-error');
+  const modalHeader = document.querySelector('.modal-header');
   const modalBody = document.getElementById('modal-body-content');
   const modalSuccess = document.getElementById('modal-success-content');
   const closeSuccessBtn = document.querySelector('.close-success-btn');
@@ -135,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (response.ok || response.status === 200) {
         // Show success state
         trackEvent('form_completed');
+        modalHeader.classList.add('hidden');
         modalBody.classList.add('hidden');
         modalSuccess.classList.remove('hidden');
       } else {
