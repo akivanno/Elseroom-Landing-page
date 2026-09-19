@@ -280,6 +280,7 @@ label {
 
 input[type="text"],
 input[type="email"],
+textarea,
 select {
   padding: 0.75rem 1rem;
   border: 1px solid var(--border-color);
@@ -291,11 +292,17 @@ select {
 }
 
 input:focus,
+textarea:focus,
 select:focus {
   outline: none;
   border-color: var(--primary);
   background: #fff;
   box-shadow: 0 0 0 3px rgba(99, 67, 242, 0.15);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
 }
 
 .checkbox-options,
