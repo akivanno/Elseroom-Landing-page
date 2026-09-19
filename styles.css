@@ -148,7 +148,7 @@ body {
 }
 
 .hero-3d-logo {
-  max-width: 80%;
+  max-width: 72%;
   height: auto;
   transform: translate(10%, -5%);
   animation: float 6s ease-in-out infinite;
@@ -395,7 +395,7 @@ input[type="radio"] {
 
   .hero {
     flex-direction: column-reverse;
-    padding: 7rem 2rem 3rem;
+    padding: 5.5rem 1.5rem 3rem;
   }
 
   .hero-content {
@@ -404,13 +404,20 @@ input[type="radio"] {
   }
 
   .hero-3d-logo {
+    max-width: 60%;
     transform: translate(0, 0);
     animation: float-mobile 6s ease-in-out infinite;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .hero-title {
     font-size: 2.75rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-subtitle {
+    line-height: 1.35;
+    margin-bottom: 1.75rem;
   }
 
   .cta-container {

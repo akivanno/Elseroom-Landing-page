@@ -27,12 +27,32 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   };
 
+  // Analytics stub
+  const trackEvent = (eventName, properties = {}) => {
+    console.log(`[Analytics] ${eventName}`, properties);
+    // TODO: Connect to your actual analytics provider here (e.g., Mixpanel, PostHog, GA)
+  };
+
+  // 1. Landing visitor
+  trackEvent('landing_visitor');
+
+  // 2. Email entered tracking
+  let emailEnteredTracked = false;
+  heroEmailInput.addEventListener('input', () => {
+    if (!emailEnteredTracked && heroEmailInput.value.length > 5 && heroEmailInput.value.includes('@')) {
+      trackEvent('email_entered');
+      emailEnteredTracked = true;
+    }
+  });
+
   // Modal logic
   const openModal = () => {
     // Pre-fill email from hero section
     if (heroEmailInput.value) {
       workEmailInput.value = heroEmailInput.value;
     }
+    trackEvent('form_opened', { prefilled_email: !!heroEmailInput.value });
+    
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
   };
@@ -114,6 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (response.ok || response.status === 200) {
         // Show success state
+        trackEvent('form_completed');
         modalBody.classList.add('hidden');
         modalSuccess.classList.remove('hidden');
       } else {
